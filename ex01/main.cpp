@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ares <ares@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 21:37:28 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/10/06 19:54:11 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/10/17 19:25:05 by ares             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,23 @@
 int main() {
     PhoneBook phonebook;
     std::string command;
-
+    
     while (true) {
-        // Prompt user for command
-        if (std::cin.eof()) break; // Handle Ctrl+D
-        if (command == "ADD") phonebook.addContact();
-        // else if (command == "SEARCH") phonebook.searchContact();
-        else if (command == "EXIT") break;
-        else std::cout << "Invalid command. Use ADD, SEARCH, or EXIT.\n";
+        std::cout << "Enter command (ADD, SEARCH, EXIT): ";
+        std::getline(std::cin, command);
+        
+        // Handle each command
+        if (command == "ADD") {
+            phonebook.addContact();
+        } else if (command == "SEARCH") {
+            phonebook.searchContact();
+        } else if (command == "EXIT") {
+            break;
+        } else if (std::cin.eof()) {  // Ctrl+D
+            break;
+        } else {
+            std::cout << "Invalid command!" << std::endl;
+        }
     }
+    return 0;
 }

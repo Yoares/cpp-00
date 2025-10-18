@@ -3,64 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ykhoussi <ykhoussi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ares <ares@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 21:38:12 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/10/06 19:54:05 by ykhoussi         ###   ########.fr       */
+/*   Updated: 2025/10/17 19:50:54 by ares             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-class Contact {
-  
-    private:
-        std::string firstName;
-        std::string lastName; 
-        std::string nickname;
-        std::string phoneNumber;
-        std::string darkestSecret;
-    public:
-    // setters :
-        void    setfirstname(std::string name)
-        {
-            if (!name.empty())
-                firstName = name;
-        }        
-        void    setlastname(std::string name)
-        {
-            if (!name.empty())
-                lastName = name;
-        }
-        void    setnickname(std::string name)
-        {
-            if (!name.empty())
-                nickname = name;
-        }
-        void    setphonenum(std::string num)
-        {
-            if (!num.empty())
-                phoneNumber = num;
-        }
-        void    setdarkestsecret(std::string secret){
-            if (!secret.empty())
-                darkestSecret = secret;
-        }
-        
-    // getters :
-        std::string   getfirstname(){
-            return firstName;
-        }
-        std::string   getlastname(){
-            return lastName;
-        }
-        std::string getnickname(){
-            return nickname;
-        }
-        std::string getphonenum(){
-            return phoneNumber;
-        }
-        std::string getdarkestsecret(){
-            return darkestSecret;
-        }
-};
+//conostructor
+Contact::Contact() {
+    firstName = "";
+    lastName = "";
+    nickname = "";
+    phoneNumber = "";
+    darkestSecret = "";
+}
+
+void Contact::setfirstname(std::string name)
+{
+    if (!name.empty())
+        firstName = name;
+}
+void Contact::setlastname(std::string name)
+{
+    if (!name.empty())
+        lastName = name;
+}
+void Contact::setnickname(std::string name)
+{
+    if (!name.empty())
+        nickname = name;
+}
+void Contact::setphonenum(std::string num)
+{
+    if (!num.empty())
+        phoneNumber = num;
+}
+void Contact::setdarkestsecret(std::string secret)
+{
+    if (!secret.empty())
+        darkestSecret = secret;
+}
+
+// getters :
+std::string Contact::getfirstname()
+{
+    return firstName;
+}
+std::string Contact::getlastname()
+{
+    return lastName;
+}
+std::string Contact::getnickname()
+{
+    return nickname;
+}
+std::string Contact::getphonenum()
+{
+    return phoneNumber;
+}
+std::string Contact::getdarkestsecret()
+{
+    return darkestSecret;
+}
