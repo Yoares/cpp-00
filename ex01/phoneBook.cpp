@@ -6,7 +6,7 @@
 /*   By: ares <ares@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 21:37:28 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/10/18 03:28:27 by ares             ###   ########.fr       */
+/*   Updated: 2025/10/18 15:16:42 by ares             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void PhoneBook::addContact(){
     std::getline(std::cin, input);
     newContact.setdarkestsecret(input);
 
+    contacts[nextIndex] = newContact;
+    nextIndex = (nextIndex + 1) % 8;
+    
     if (contactCount  < 8)
         contactCount++;
     std::cout << "Contact added successfully!" << std::endl;
