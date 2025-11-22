@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ares <ares@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 21:37:28 by ykhoussi          #+#    #+#             */
-/*   Updated: 2025/10/17 19:25:05 by ares             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "phoneBook.hpp"
+#include "PhoneBook.hpp"
 
 int main() {
     PhoneBook phonebook;
@@ -18,7 +6,8 @@ int main() {
     
     while (true) {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, command);
+        if (!std::getline(std::cin, command))
+            break;     
         
         // Handle each command
         if (command == "ADD") {
